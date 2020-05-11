@@ -1,0 +1,15 @@
+---
+applications:
+- name: xsuaa-sample-approuter
+  path: xsuaa-sample-approuter
+  memory: 128M
+  buildpack: nodejs_buildpack
+  env:
+    destinations: >
+      [{
+        "name": "xsuaa-sample-webapp",
+        "url": "https://xsuaa-sample.cfapps.eu10.hana.ondemand.com/",
+        "forwardAuthToken": true
+      }]
+  services:
+    - xsuaa-sample

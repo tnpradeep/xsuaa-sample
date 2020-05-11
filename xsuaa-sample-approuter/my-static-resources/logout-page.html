@@ -1,0 +1,141 @@
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge " />
+<link rel="icon" type="image/png" href="sap-16x16.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="sap-32x32.png" sizes="16x16" />
+
+<script id="sap-ui-bootstrap"
+	src="resources/sap-ui-cachebuster/sap-ui-core.js"
+	data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.ui.ux3"></script>
+
+<style type="text/css">
+.sapUiUx3ShellHeader {
+	background-color: #009de0 !important;
+}
+
+.sapUiUx3ShellBgImg {
+	/* background-image: none !important; */
+	
+}
+
+.sapUiUx3ShellBg {
+	background: radial-gradient(circle, #ffffff, #e5e5e5);
+	background-image: none!imortant;
+}
+
+.sapUiUx3ShellHeaderTitleRight  span {
+	color: white !important;
+}
+
+.sapUiUx3ShellHeader h1 {
+	color: white !important;
+}
+
+.sapUiUx3ShellHeader a {
+	color: white !important;
+}
+
+.sapUiUx3ShellCanvas {
+	/* border-top: 1px solid #ffffff;
+	border-left: 1px solid #f6f6f6;
+	border-right: 1px solid #f6f6f6; */
+	background: linear-gradient(to bottom, #f6f6f6 0, #ffffff 100%)
+		!important;
+	box-shadow: 0 0 1px 0 #dddddd;
+	padding-top: 3px;
+	/* border-left: 1px solid #f6f6f6;
+	border-right: 1px solid #f6f6f6; */
+}
+
+.sapUiUx3ShellCanvas .sapUiUx3ShellContent {
+	padding: 24px 10px 2px 32px;
+}
+
+.sapUiUx3ShellWorksetBar {
+	background-color: transparent !important;
+}
+
+.sapUiUx3ShellToolPaletteArea, .sapUiUx3ShellPaneBarRight {
+	background-color: #f2f2f2 !important;
+}
+
+.sapUiUx3ShellCanvasBackgroundClosed>.sapUiUx3ShellCanvasBackgroundRight
+	{
+	/* background-image: url(img/Canvas_shadow_right.png); */
+	background-repeat: no-repeat;
+}
+
+.sapUiUx3ShellCanvasBackgroundRight {
+	top: -20px;
+}
+
+.sapUiUx3ShellToolPaletteArea {
+	/*background-image: url(img/Canvas_shadow_left.png);*/
+	margin-top: 90px;
+	border-top: 1px solid white;
+}
+
+.sapUiUx3ShellToolPaletteArea, .sapUiUx3ShellPaneBar {
+	background-repeat: no-repeat;
+	-moz-background-origin: border;
+	background-origin: border-box;
+}
+
+.sapUiUx3ShellPaneBarRight {
+	margin-top: 110px;
+	border-top: 1px solid white;
+}
+
+.sapUiUx3NavBarArrow {
+	background: #fafafa !important;
+	box-shadow: 0 0 2px 1px #dddddd !important;
+}
+
+.sapUiUx3ShellHeader-logout {
+	background-image: url("img/LogOut_icon.png") !important;
+}
+
+.margin-style {
+	margin-top: 7px;
+}
+
+.sapUiUx3ShellHeader {
+	box-shadow: 0px 2px 2px 2px #37547A;
+	border-bottom: none;
+	background: linear-gradient(180deg, #37547a, #416284) !important;
+	background: -webkit-linear-gradient(-90deg, #37547a, #416284) !important;
+	background: -moz-linear-gradient(180deg, #37547a, #416284) !important;
+	background: -o-linear-gradient(180deg, #37547a, #416284) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#37547a',
+		endColorstr='#416284', GradientType=0) !important;
+	text-shadow: 0 0em 0 rgba(255, 255, 255, 0.5);
+}
+</style>
+<script>
+	var oShell = new sap.ui.ux3.Shell("logoutShell", {
+		showInspectorTool : false,
+		showFeederTool : false,
+		showSearchTool : false,
+		showLogoutButton : false
+	});
+	
+	oShell.placeAt("shellArea");
+	oShell.setContent(new sap.ui.core.HTML("logoutContent", {
+		preferDOM : true, sanitizeContent : true
+	}));
+	localStorage.removeItem("csrfToken");
+</script>
+<title>Logout</title>
+</head>
+<body class="sapUiBody">
+	<div id="shellArea">
+		<div id="logoutContent"
+			style="-webkit-user-select: auto; user-select: auto">
+			<h3>You have been logged out</h3>
+			<p>
+				<a href=.>Login</a>
+			</p>
+		</div>
+	</div>
+</body>
+</html>

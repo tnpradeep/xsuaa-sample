@@ -1,0 +1,31 @@
+{
+	"xsappname": "xsuaa-sample",
+	"tenant-mode": "dedicated",
+	"authorities": [
+		"$XSAPPNAME.Hello.User"
+	],
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Hello.User",
+      "description": "Permission for accessing xsuaa-sample app"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "HelloUser",
+      "description": "Permission required to access xsuaa-sample web app",
+      "scope-references": [
+        "$XSAPPNAME.Hello.User"
+      ]
+    }
+  ],
+  "role-collections": [
+    {
+      "name": "Hello.Users",
+      "description": "Permission required for xsuaa-sample app",
+      "role-template-references": [
+        "$XSAPPNAME.HelloUser"
+      ]
+    }
+  ]
+}

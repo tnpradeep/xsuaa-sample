@@ -1,0 +1,21 @@
+{
+	"authenticationMethod": "route",
+    "routes": [
+		{
+            "source": "^/logout-page.html$",
+            "localDir": "my-static-resources",
+            "authenticationType": "none"
+        },
+        {
+            "source": "^/(.*)",
+            "destination": "xsuaa-sample-webapp",
+            "authenticationType": "xsuaa",
+			"csrfProtection": false
+			
+        }
+		],
+	"logout": {
+        "logoutEndpoint": "/logout",
+        "logoutPage": "/logout-page.html"
+    }
+}
